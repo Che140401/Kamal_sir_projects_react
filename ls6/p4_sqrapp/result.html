@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Sqaure Finder App by kamal sir</title>
+</head>
+<style>
+	*{font-size:50px;}
+	body{background-color:lightblue;}
+</style>
+<body>
+	<center>
+	<h1>Result page</h1>
+	<h2 id="ans"></h2>
+	</center>
+</body>
+<script>
+
+let ans = document.getElementById('ans');
+let res = localStorage.getItem("res");
+if(res == null)
+{
+	ans.innerHTML= "u did not enter number";
+}
+else{
+	ans.innerHTML="square="+res;
+}
+
+</script>
+<br/><br/>
+<a href="index.html">Home</a>
+</html>

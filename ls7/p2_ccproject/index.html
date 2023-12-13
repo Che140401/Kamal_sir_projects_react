@@ -1,0 +1,42 @@
+<html>
+<head><title>Live CC by kamal sir</title>
+<style>
+	*{font-size:50px;);
+	body{background-color:lightblue;}
+</style>
+</head>
+<body>
+
+<h1>Live CC App</h1>
+
+<form onsubmit="covert()">
+	<input type="number" step="any" placeholder="enter the amt in $$" id="amt" />
+	<br/><br/>
+	<input type="submit" value="Convert"/>
+</form>
+
+</body>
+<script>
+	function covert(){
+	
+	event.preventDefault();
+	let amt = document.getElementById("amt");
+	let msg = document.getElementById("msg");
+	let url = "https://api.exchangerate-api.com/v4/latest/USD";
+	
+	fetch(url)
+	.then(res => res.json())
+	.then(data => {
+		let dollar = data["rates"]["INR"];
+		let a = parseFloat(amt.value);
+		let rupees = a* dollar;
+		msg.innerHTML = "\u2089" + " " + rupees;
+	})
+	.catch(err =>msg.innerHTML = "issue" + err);
+
+}
+
+
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Color App</title>
+	<style>
+		*{font-size:30px;}
+		body{background-color:lightblue;}
+		.nav{background-color:black;}
+		.nav a{color:white,text-decoration:none;padding:10%}
+	</style>
+	<script>
+	function check(){
+		event.preventDefault();
+		let num=document.getElementById('num');
+		let ans=document.getElementById('ans');
+
+		if(num.value == "")
+		{
+			alert("u did not enter integer");
+			ans.innerHTML="";
+			num.focus();
+			return;
+		}
+		let n =parseInt(num.value);
+		let r=n%2==0 ? "even":"odd";
+		ans.innerHTML=r;
+	}
+	
+</script>
+</head>
+<body>
+	<div class="nav">
+		<a href="index.html">Home</a>
+		<a href="about.html">About</a>
+	</div>
+	<h1>Even Odd Finder</h1>
+	<form onsubmit="check()">
+	<input type="number" id="num" placeholder="enter integer">
+	<br/><br/>
+	<input type="submit" value="Find E/O" />
+	</form>
+	<h1 id="ans"/>
+</body>
+
+</html>

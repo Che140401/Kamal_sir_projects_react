@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>App 4 by kamal sir </title>
+<style>
+	*{font-size: 50px}
+	body{background-color:light-blue;}
+</style>
+</head>
+
+<body>
+	<h1>Welcome App</h1>
+	<form onsubmit="show()">
+	<input type="text" id="name" placeholder="enter your name" />
+	<br><br>
+	<input type="submit" />
+	</form>
+	<h1 id="ans" />
+</body>
+<script>
+	let show =()=>{
+		event.preventDefault();
+		let name=document.getElementById('name');
+		let result=document.getElementById('ans');
+		let msg="Good morning "+name.value;
+		if(name.value == ""){ result.innerHTML="Please enter name" }
+		else if(name.value.trim() == ""){result.innerHTML="name should not be only spaces"}
+		else if(!name.value.match(/^[A-Za-z ]+$/)){result.innerHTML="name should not contain only alpha"}
+		else{ let d=new Date();let hr=d.getHours();
+			if(hr>=12){
+				msg="Good Afternoon"+name.value;
+			}else if(hr>=16){
+				msg="Good Evening"+name.value;;
+			}else if(hr>=21){
+				msg="Good night"+name.value;;
+			}
+			result.innerHtml=msg;
+		 }	
+	}
+
+</script>
+</html>

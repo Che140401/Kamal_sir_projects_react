@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Sqaure Finder App by kamal sir</title>
+</head>
+<style>
+	*{font-size:50px;}
+	body{background-color:lightblue;}
+</style>
+<body>
+	<center>
+	<h1>Sqaure Finder App</h1>
+	<form>
+	<input type="number" step="any" id="num" placeholder="enter number" />
+	<br/><br/>
+	<input type="submit" value="Find Sqaure" />
+	</form>
+	</center>
+</body>
+<script>
+
+function compute()
+{
+event.preventDefault();
+let num=document.getElementById("num");
+
+if(num.value == ""){
+	alert("u did not enter number");
+	num.focus();
+	return;
+}
+
+let n = parseFloat(num.value);
+let r=n*n;
+localStorage.setItem("res",r);
+window.location.href="result.html"
+}
+
+</script>
+</html>

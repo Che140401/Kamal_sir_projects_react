@@ -1,0 +1,29 @@
+<html>
+<head><title>App 2 by kamal sir</title>
+
+<style>
+	*{font-size:50px;}
+	#ans{color:red;text-align:center;}
+</style>
+</head>
+
+<body>
+	<div>
+	<form onsubmit="show()">
+		<input type="submit" value="Click Me"/>
+	</form>
+	
+	</div>
+	<div>
+		<h1 id="ans"></h1>
+	</div>
+</body>
+<script>
+	let show=()=>{
+		event.preventDefault()
+		let ans=document.getElementById('ans');
+		ans.innerHTML="Good morning";
+	}
+	console.log(show);
+</script>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>App 3 by kamal sir </title>
+<style>
+	*{font-size: 50px}
+	body{background-color:light-blue;}
+</style>
+</head>
+
+<body>
+	<h1>Welcome App</h1>
+	<form onsubmit="show()">
+	<input type="text" id="name" placeholder="enter your name" />
+	<br><br>
+	<input type="submit" />
+	</form>
+	<h1 id="ans" />
+</body>
+<script>
+	let show =()=>{
+		event.preventDefault();
+		let name=document.getElementById('name');
+		let result=document.getElementById('ans');
+		let msg="Good morning "+name.value;
+		if(name === undefined){ result.innerHTML="Please enter name" }
+		else{ result.innerHTML=msg }	
+	}
+
+</script>
+</html>

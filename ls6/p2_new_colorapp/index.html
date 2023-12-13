@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Color App by kamal sir</title>
+	<style>
+		
+		
+	</style>
+</head>
+<body>
+	<h1>Color App </h1>
+</body>
+<script>
+	function change(){
+		let color_me=["red","green","blue"];
+		let r=parseInt(Math.random() * color_me.length);
+		document.body.style.backgroundColor = color_me[r];
+	}
+	setInterval(change,5000);
+</script>
+</html>

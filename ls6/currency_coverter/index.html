@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>CC by kamal sir</title>
+</head>
+<style>
+	*{font-size:50px;}
+	body{background-color:lightblue;}
+</style>
+<body>
+	<form>
+	<input type="number" step="any" id="air" placeholder="enter amt in Rs" />
+	<br/><br/>
+	<input type="number" step="any" id="aid" placeholder="enter amt in $$" />
+	</form>
+	
+</body>
+<script>
+
+	let air = document.getElementById("air");
+	let aid = document.getElementById("aid");
+
+	air.addEventListener("input",function(){
+		let rs = parseFloat(air.value);
+		let ds = rs / 83.15;
+		aid.value=ds.toFixed(2);});
+
+	aid.addEventListener("input",function(){
+		let ds = parseFloat(aid.value);
+		let rs = ds * 83.15;
+		air.value = rs.toFixed(2);});
+</script>
+</html>
